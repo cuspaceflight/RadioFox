@@ -6,8 +6,9 @@ import serial
 import os
 import time
 import math
-
 import json
+
+from geopy import distance
 
 import sched
 
@@ -155,6 +156,16 @@ class UplinkInterface(wxMeta.SimpleApp):
         else:
             print "Callsign not matched, ignoring"
             self.SetBalloonPos(None)
+        our_lat = float(self.controls.ant_lat.GetValue())
+        our_lng = float(self.controls.ant_lon.GetValue())
+        our_alt = float(self.controls.ant_alt.GetValue())
+        lat = float(lat)
+        lng = float(lng)
+        alt = float(alt)
+        d = distance.distance((our_lat, our_lng), (lat, lng))
+        d_alt = alt - our_alt
+        dist = math.sqrt(d**2 + d_alt**2)
+        print "Distance to payload: {0}".dist
 
     def GetAntGPS(self, evt):
         if self.ser:
