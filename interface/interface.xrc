@@ -1,0 +1,156 @@
+<?xml version="1.0" ?>
+<resource>
+  <object class="wxFrame" name="main_window">
+    <object class="wxBoxSizer">
+      <orient>wxHORIZONTAL</orient>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <object class="sizeritem">
+            <object class="wxGridSizer">
+              <object class="sizeritem">
+                <object class="wxStaticText">
+                  <label>Antenna Az/El</label>
+                </object>
+                <flag>wxALIGN_CENTRE_VERTICAL</flag>
+              </object>
+              <object class="sizeritem">
+                <object class="wxTextCtrl" name="ant_az">
+                  <value>120</value>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxTextCtrl" name="ant_el">
+                  <value>20</value>
+                </object>
+              </object>
+              <object class="spacer"/>
+              <object class="sizeritem">
+                <object class="wxStaticText">
+                  <label>Ground Station Lat/Lon/Alt</label>
+                </object>
+                <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                <border>0</border>
+              </object>
+              <cols>4</cols>
+              <object class="sizeritem">
+                <object class="wxTextCtrl" name="ant_lat">
+                  <value>52.198324</value>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxTextCtrl" name="ant_lon">
+                  <value>0.12081</value>
+                </object>
+              </object>
+              <rows>3</rows>
+              <vgap>10</vgap>
+              <hgap>10</hgap>
+              <object class="sizeritem">
+                <object class="wxTextCtrl" name="ant_alt">
+                  <value>25</value>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxStaticText">
+                  <label>Balloon Lat/Lon/Alt</label>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxTextCtrl" name="bal_lat">
+                  <value>52.25</value>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxTextCtrl" name="bal_lon">
+                  <value>-0.0918</value>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxTextCtrl" name="bal_alt">
+                  <value>53.9</value>
+                </object>
+              </object>
+            </object>
+          </object>
+          <object class="sizeritem">
+            <object class="wxBoxSizer">
+              <object class="sizeritem">
+                <object class="wxTextCtrl" name="uplink_string">
+                  <size>300,20</size>
+                </object>
+                <flag>wxRIGHT|wxEXPAND|wxGROW</flag>
+                <border>20</border>
+              </object>
+              <object class="sizeritem">
+                <object class="wxButton" name="uplink">
+                  <label>Uplink Command</label>
+                </object>
+                <flag>wxALIGN_CENTRE_VERTICAL</flag>
+              </object>
+              <orient>wxHORIZONTAL</orient>
+              <object class="sizeritem">
+                <object class="wxStaticText">
+                  <label>Callsign:</label>
+                </object>
+                <flag>wxLEFT|wxRIGHT|wxALIGN_CENTRE</flag>
+                <border>20</border>
+              </object>
+              <object class="sizeritem">
+                <object class="wxTextCtrl" name="callsign">
+                  <value>B2_HK</value>
+                </object>
+              </object>
+            </object>
+            <flag>wxTOP</flag>
+            <border>20</border>
+          </object>
+          <orient>wxVERTICAL</orient>
+        </object>
+        <flag>wxALL</flag>
+        <border>10</border>
+      </object>
+      <object class="sizeritem">
+        <object class="wxBoxSizer">
+          <object class="sizeritem">
+            <object class="wxButton" name="go">
+              <label>Set Az/El</label>
+            </object>
+            <flag>wxBOTTOM</flag>
+            <border>10</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxButton" name="stop">
+              <label>Stop</label>
+            </object>
+            <flag>wxBOTTOM</flag>
+            <border>10</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxButton" name="gps">
+              <label>Get GPS</label>
+            </object>
+            <flag>wxBOTTOM</flag>
+            <border>10</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxButton" name="bal">
+              <label>Set Balloon</label>
+            </object>
+            <flag>wxBOTTOM</flag>
+            <border>10</border>
+          </object>
+          <orient>wxVERTICAL</orient>
+          <object class="sizeritem">
+            <object class="wxCheckBox" name="update_balloon">
+              <label>Update Balloon</label>
+            </object>
+          </object>
+        </object>
+        <flag>wxALL</flag>
+        <border>10</border>
+      </object>
+    </object>
+    <size>100,300</size>
+    <title>Uplink Controller Console</title>
+  </object>
+</resource>
