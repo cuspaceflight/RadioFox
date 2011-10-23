@@ -162,10 +162,10 @@ class UplinkInterface(wxMeta.SimpleApp):
         lat = float(lat)
         lng = float(lng)
         alt = float(alt)
-        d = distance.distance((our_lat, our_lng), (lat, lng))
-        d_alt = alt - our_alt
+        d = distance.distance((our_lat, our_lng), (lat, lng)).km
+        d_alt = (alt - our_alt)/1000
         dist = math.sqrt(d**2 + d_alt**2)
-        print "Distance to payload: {0}".dist
+        print "Distance to payload: {0}".format(dist)
 
     def GetAntGPS(self, evt):
         if self.ser:
