@@ -42,20 +42,23 @@ def FindPort():
         import glob
         ports = glob.glob('/dev/ttyS*') + glob.glob('/dev/ttyUSB*') + glob.glob('/dev/tty.usb*')
         for port in ports:
-            try:
-                print "Trying serial port in 15 secs: %s" % port
-                s = serial.Serial(port, 9600)
-                time.sleep(15)
-                print "Trying now!"
-                s.write(pingcmd)
-                if s.read(len(pingresp)) == pingresp:
-                    s.close()
-                    return port
-                s.close()
-            except serial.SerialException:
-                pass
+			pass
+            #try:
+            #    print "Trying serial port in 15 secs: %s" % port
+            #    s = serial.Serial(port, 9600)
+            #    time.sleep(15)
+            #    print "Trying now!"
+            #    s.write(pingcmd)
+            #    if s.read(len(pingresp)) == pingresp:
+            #        s.close()
+            #        return port
+            #    s.close()
+            #except serial.SerialException:
+            #    pass
 
 def balloon_azel(lat,lon,alt,Ball_lat,Ball_lon,Ball_alt):
+	"""This function returns a tuple (heading, elevation) when passed the
+	observer's position and the balloon's position"""
 
     Rearth = 6378100
     
